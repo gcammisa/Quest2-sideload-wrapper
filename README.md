@@ -15,7 +15,7 @@
 5. Run the program Quest2-sideload-Wrapper and follow the instruction
 
 # Troubleshooting
-* If you run into any problem copy the debug log in the bottom of the program, paste it in a text file and send it to someone knowledgeable.
+* If you run into any problem copy the debug log that the program automatically creates in its folder and send it to someone knowledgeable.
 
 # Compiling
 If you want to compile this from the source code, you'll need Visual Studio 2019 and .NET Framework 4.8.
