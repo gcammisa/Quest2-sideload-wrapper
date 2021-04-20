@@ -68,10 +68,17 @@ namespace Quest2_Sideloader
             {
                 //A device is connected and authorized, we're good!
                 //Grab the quest serial for use in the following commands
-                questID = Regex.Matches(adb_devices, @"\b1WMHH\S*")[0].Value;
+                if (!(Regex.Matches(adb_devices, @"\b1WMHH\S*").Count > 1))
+                {
+                    questID = Regex.Matches(adb_devices, @"\b1WMHH\S*")[0].Value;
 
-                cbConnected.Checked = true;
-                BTNFastboot.Enabled = true;
+                    cbConnected.Checked = true;
+                    BTNFastboot.Enabled = true;
+                }
+                else
+                {
+                    MessageBox.Show("Seems like you have more than 1 quest 2 device connected to your PC. Please only connect 1 device and try again!");
+                }
             }
             else
             {
