@@ -5,6 +5,7 @@
 
 # Notes
 * adb and fastboot executables are already included in the release package, no need to manually install them beforehand
+* the tool automatically selects only quest 2 devices and ignores any other android device
 
 # How to use
 1. Download the compiled package from the Release section
