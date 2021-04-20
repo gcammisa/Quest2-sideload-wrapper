@@ -51,14 +51,15 @@ namespace Quest2_Sideloader
             this.lblInfo1.Location = new System.Drawing.Point(6, 9);
             this.lblInfo1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblInfo1.Name = "lblInfo1";
-            this.lblInfo1.Size = new System.Drawing.Size(346, 13);
+            this.lblInfo1.Size = new System.Drawing.Size(404, 13);
             this.lblInfo1.TabIndex = 0;
-            this.lblInfo1.Text = "Step 1: Disconnect all android devices (except your quest2) from the PC";
+            this.lblInfo1.Text = "Step 1:  Make sure that only 1 oculus is powered on and connected to the computer" +
+    "";
             // 
             // BTNCheckCon
             // 
             this.BTNCheckCon.Location = new System.Drawing.Point(6, 33);
-            this.BTNCheckCon.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BTNCheckCon.Margin = new System.Windows.Forms.Padding(2);
             this.BTNCheckCon.Name = "BTNCheckCon";
             this.BTNCheckCon.Size = new System.Drawing.Size(256, 23);
             this.BTNCheckCon.TabIndex = 1;
@@ -71,7 +72,7 @@ namespace Quest2_Sideloader
             this.cbConnected.AutoCheck = false;
             this.cbConnected.AutoSize = true;
             this.cbConnected.Location = new System.Drawing.Point(288, 37);
-            this.cbConnected.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbConnected.Margin = new System.Windows.Forms.Padding(2);
             this.cbConnected.Name = "cbConnected";
             this.cbConnected.Size = new System.Drawing.Size(78, 17);
             this.cbConnected.TabIndex = 2;
@@ -81,7 +82,7 @@ namespace Quest2_Sideloader
             // RTBDebug
             // 
             this.RTBDebug.Location = new System.Drawing.Point(6, 242);
-            this.RTBDebug.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.RTBDebug.Margin = new System.Windows.Forms.Padding(2);
             this.RTBDebug.Name = "RTBDebug";
             this.RTBDebug.ReadOnly = true;
             this.RTBDebug.Size = new System.Drawing.Size(411, 186);
@@ -101,7 +102,7 @@ namespace Quest2_Sideloader
             // BTNFastboot
             // 
             this.BTNFastboot.Location = new System.Drawing.Point(6, 86);
-            this.BTNFastboot.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BTNFastboot.Margin = new System.Windows.Forms.Padding(2);
             this.BTNFastboot.Name = "BTNFastboot";
             this.BTNFastboot.Size = new System.Drawing.Size(256, 22);
             this.BTNFastboot.TabIndex = 5;
@@ -114,7 +115,7 @@ namespace Quest2_Sideloader
             this.cbBootloader.AutoCheck = false;
             this.cbBootloader.AutoSize = true;
             this.cbBootloader.Location = new System.Drawing.Point(288, 89);
-            this.cbBootloader.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbBootloader.Margin = new System.Windows.Forms.Padding(2);
             this.cbBootloader.Name = "cbBootloader";
             this.cbBootloader.Size = new System.Drawing.Size(127, 17);
             this.cbBootloader.TabIndex = 6;
@@ -126,7 +127,7 @@ namespace Quest2_Sideloader
             this.cbSideload.AutoCheck = false;
             this.cbSideload.AutoSize = true;
             this.cbSideload.Location = new System.Drawing.Point(289, 143);
-            this.cbSideload.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbSideload.Margin = new System.Windows.Forms.Padding(2);
             this.cbSideload.Name = "cbSideload";
             this.cbSideload.Size = new System.Drawing.Size(116, 17);
             this.cbSideload.TabIndex = 9;
@@ -136,7 +137,7 @@ namespace Quest2_Sideloader
             // BTNSideload
             // 
             this.BTNSideload.Location = new System.Drawing.Point(7, 139);
-            this.BTNSideload.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BTNSideload.Margin = new System.Windows.Forms.Padding(2);
             this.BTNSideload.Name = "BTNSideload";
             this.BTNSideload.Size = new System.Drawing.Size(255, 22);
             this.BTNSideload.TabIndex = 8;
@@ -159,7 +160,7 @@ namespace Quest2_Sideloader
             this.cbFlashed.AutoCheck = false;
             this.cbFlashed.AutoSize = true;
             this.cbFlashed.Location = new System.Drawing.Point(289, 197);
-            this.cbFlashed.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbFlashed.Margin = new System.Windows.Forms.Padding(2);
             this.cbFlashed.Name = "cbFlashed";
             this.cbFlashed.Size = new System.Drawing.Size(71, 17);
             this.cbFlashed.TabIndex = 12;
@@ -169,7 +170,7 @@ namespace Quest2_Sideloader
             // BTNFlash
             // 
             this.BTNFlash.Location = new System.Drawing.Point(7, 193);
-            this.BTNFlash.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BTNFlash.Margin = new System.Windows.Forms.Padding(2);
             this.BTNFlash.Name = "BTNFlash";
             this.BTNFlash.Size = new System.Drawing.Size(255, 22);
             this.BTNFlash.TabIndex = 11;
@@ -217,7 +218,7 @@ namespace Quest2_Sideloader
             this.Controls.Add(this.BTNCheckCon);
             this.Controls.Add(this.lblInfo1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "Quest 2 sideload tool";

@@ -19,6 +19,7 @@ namespace Quest2_Sideloader
         public static string appPath = Application.StartupPath;
         public static string adbPath = appPath + "\\platformTools\\adb.exe";
         public static string fastbootPath = appPath + "\\platformTools\\fastboot.exe";
+        public string questID = "";
 
         public Form1()
         {
@@ -63,9 +64,12 @@ namespace Quest2_Sideloader
                 //A device is connected but not authorized, let's tell the user
                 MessageBox.Show("Put on your headset and authorize usb debug, then try again");
             }
-            else if (Regex.IsMatch(adb_devices, @"\bdevice\b"))
+            else if (Regex.IsMatch(adb_devices, @"\bdevice\b") && Regex.IsMatch(adb_devices, @"\b1WMHH\S*"))
             {
                 //A device is connected and authorized, we're good!
+                //Grab the quest serial for use in the following commands
+                questID = Regex.Matches(adb_devices, @"\b1WMHH\S*")[0].Value;
+
                 cbConnected.Checked = true;
                 BTNFastboot.Enabled = true;
             }
@@ -78,7 +82,7 @@ namespace Quest2_Sideloader
 
         private void BTNFastboot_Click(object sender, EventArgs e)
         {
-            string reboot_fastboot = RunCommand(adbPath, "reboot bootloader");
+            string reboot_fastboot = RunCommand(adbPath, "-s " + questID +  " reboot bootloader");
             RTBDebug.AppendText(reboot_fastboot + "\n");
             bool gotFastBoot = false;
 
@@ -130,7 +134,7 @@ namespace Quest2_Sideloader
             if (File.Exists("update.zip"))
             {
                 MessageBox.Show("This process WILL take a while to execute (2 to 10 minutes). Do NOT close any windows or disconnect the quest 2 until the update is finished!");
-                string sideload = RunCommand(adbPath, "sideload " + appPath + "\\update.zip");
+                string sideload = RunCommand(adbPath, "sideload -s " + appPath + "\\update.zip");
                 RTBDebug.AppendText(sideload + "\n");
                 cbFlashed.Checked = true;
                 BTNFlash.Enabled = false;
