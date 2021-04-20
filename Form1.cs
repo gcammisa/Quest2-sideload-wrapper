@@ -54,6 +54,13 @@ namespace Quest2_Sideloader
             return output;
         }
 
+        private void SaveLogToFile()
+        {
+            string logPath = appPath + "\\LogFile_" + DateTime.Now.ToString("yyyyMMdd_hhmmss") + ".txt";
+            using (File.Create(logPath)) ;
+            RTBDebug.SaveFile(logPath, RichTextBoxStreamType.PlainText);
+        }
+
         private void BTNCheckCon_Click(object sender, EventArgs e)
         {
             string adb_devices = RunCommand(adbPath, "devices");
@@ -145,7 +152,8 @@ namespace Quest2_Sideloader
                 RTBDebug.AppendText(sideload + "\n");
                 cbFlashed.Checked = true;
                 BTNFlash.Enabled = false;
-                MessageBox.Show("Sideloading DONE! WAIT FOR YOUR QUEST 2 TO REBOOT ITSELF, THEN REBOOT IT MANUALLY AGAIN!");
+                MessageBox.Show("Sideloading DONE! WAIT FOR YOUR QUEST 2 TO REBOOT ITSELF, THEN REBOOT IT MANUALLY AGAIN!\n If you still have the old software version there might have been some problem with the sideloading. Please send the log file to someone knowledgeable.");
+                SaveLogToFile();
             }
             else
             {
